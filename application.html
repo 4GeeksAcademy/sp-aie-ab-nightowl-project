@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Brasaland Digital - Application</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="styles.css">
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script>
+		tailwind.config = {
+			theme: {
+				extend: {
+					colors: {
+						ember: "#ea580c",
+						ink: "#0f172a",
+						sand: "#fff7ed"
+					}
+				}
+			}
+		};
+	</script>
+</head>
+<body data-page="application">
+	<div id="site-header"></div>
+
+	<main class="mx-auto max-w-6xl px-4 pb-16 pt-8 sm:px-6 sm:pt-10">
+		<section class="rounded-3xl border border-orange-100 bg-white/85 px-5 py-10 shadow-[0_22px_70px_-32px_rgba(15,23,42,0.4)] sm:px-8 sm:py-12 lg:px-14 lg:py-14">
+			<p class="inline-flex rounded-full border border-orange-200 bg-sand px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-orange-700">
+				Application Portal
+			</p>
+			<h1 class="brand-font mt-5 text-3xl font-bold leading-tight text-ink sm:text-5xl">
+				Build with Brasaland Digital
+			</h1>
+			<p class="mt-5 max-w-2xl text-base leading-relaxed text-slate-700 sm:text-lg">
+				This page is ready for your sign-up form and validation flow.
+				The responsive navigation is fully aligned with the landing page.
+			</p>
+		</section>
+	</main>
+
+	<script src="animations.js" defer></script>
+</body>
+</html>
