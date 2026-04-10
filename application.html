@@ -13,6 +13,14 @@
 </head>
 <body data-page="application">
 	<div id="site-header"></div>
+	<div id="form-success" class="fixed left-1/2 top-24 z-50 hidden w-fit max-w-[calc(100%-2rem)] -translate-x-1/2 rounded-xl border border-green-200 bg-green-50 px-4 py-3 text-sm text-green-800 shadow-lg" role="alert" aria-live="polite" aria-atomic="true">
+		<div class="flex items-start gap-3">
+			<p id="form-success-text" class="pr-10 leading-relaxed"></p>
+			<button id="form-success-close" type="button" class="ml-auto inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-green-800 transition hover:bg-green-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-400" aria-label="Close success alert">
+				<span aria-hidden="true" class="text-2xl font-bold leading-none">&times;</span>
+			</button>
+		</div>
+	</div>
 
 	<main class="mx-auto max-w-6xl px-4 pb-16 pt-8 sm:px-6 sm:pt-10" aria-label="Application page content">
 		<section aria-labelledby="application-title" class="relative overflow-hidden rounded-3xl border border-orange-100 bg-white/90 px-5 py-10 shadow-[0_22px_70px_-32px_rgba(15,23,42,0.4)] sm:px-8 sm:py-12 lg:px-14 lg:py-14">
@@ -164,7 +172,6 @@
 					</div>
 				</div>
 
-				<p id="form-success" class="hidden rounded-xl border border-green-200 bg-green-50 px-4 py-3 text-sm text-green-800" role="status" aria-live="polite"></p>
 			</form>
 		</section>
 	</main>

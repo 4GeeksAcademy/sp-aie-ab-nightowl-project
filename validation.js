@@ -195,10 +195,17 @@ const initApplicationValidation = () => {
 	const form = document.getElementById("application-form");
 	const globalFeedback = document.getElementById("form-global-feedback");
 	const successMessage = document.getElementById("form-success");
+	const successMessageText = document.getElementById("form-success-text");
+	const successMessageClose = document.getElementById("form-success-close");
 
-	if (!form || !globalFeedback || !successMessage) {
+	if (!form || !globalFeedback || !successMessage || !successMessageText || !successMessageClose) {
 		return;
 	}
+
+	successMessageClose.addEventListener("click", () => {
+		successMessage.classList.add("hidden");
+		successMessageText.textContent = "";
+	});
 
 	const trackedInputs = [
 		...form.querySelectorAll("input, select, textarea")
@@ -210,6 +217,7 @@ const initApplicationValidation = () => {
 			validateField(input);
 			clearGlobalFeedback(globalFeedback);
 			successMessage.classList.add("hidden");
+			successMessageText.textContent = "";
 		});
 
 		input.addEventListener("blur", () => {
@@ -222,6 +230,7 @@ const initApplicationValidation = () => {
 			validateSkills(form);
 			clearGlobalFeedback(globalFeedback);
 			successMessage.classList.add("hidden");
+			successMessageText.textContent = "";
 		});
 	});
 
@@ -230,6 +239,7 @@ const initApplicationValidation = () => {
 
 		clearGlobalFeedback(globalFeedback);
 		successMessage.classList.add("hidden");
+		successMessageText.textContent = "";
 
 		const fieldsValid = trackedInputs.map((input) => validateField(input));
 		const skillsValid = validateSkills(form);
@@ -244,7 +254,7 @@ const initApplicationValidation = () => {
 			return;
 		}
 
-		successMessage.textContent = "Application submitted successfully. This is a demo flow, so no data has been sent yet.";
+		successMessageText.textContent = "Application submitted successfully. This is a demo flow, so no data has been sent yet.";
 		successMessage.classList.remove("hidden");
 		form.dataset.keepSuccessOnReset = "true";
 		form.reset();
@@ -263,7 +273,7 @@ const initApplicationValidation = () => {
 			if (form.dataset.keepSuccessOnReset === "true") {
 				delete form.dataset.keepSuccessOnReset;
 			} else {
-				successMessage.textContent = "";
+				successMessageText.textContent = "";
 				successMessage.classList.add("hidden");
 			}
 
