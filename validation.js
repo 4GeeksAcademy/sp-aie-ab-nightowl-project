@@ -246,6 +246,7 @@ const initApplicationValidation = () => {
 
 		successMessage.textContent = "Application submitted successfully. This is a demo flow, so no data has been sent yet.";
 		successMessage.classList.remove("hidden");
+		form.dataset.keepSuccessOnReset = "true";
 		form.reset();
 
 		trackedInputs.forEach((input) => {
@@ -258,8 +259,13 @@ const initApplicationValidation = () => {
 		// Wait for native reset to finish before clearing validation state.
 		requestAnimationFrame(() => {
 			clearGlobalFeedback(globalFeedback);
-			successMessage.textContent = "";
-			successMessage.classList.add("hidden");
+
+			if (form.dataset.keepSuccessOnReset === "true") {
+				delete form.dataset.keepSuccessOnReset;
+			} else {
+				successMessage.textContent = "";
+				successMessage.classList.add("hidden");
+			}
 
 			trackedInputs.forEach((input) => {
 				setFieldError(input, "");
