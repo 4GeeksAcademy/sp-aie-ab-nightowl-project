@@ -54,14 +54,14 @@ const initMobileMenu = () => {
     });
 };
 
-const loadSharedHeader = async () => {
-    const mount = document.getElementById("site-header");
+const loadPartial = async (mountId, partialPath) => {
+    const mount = document.getElementById(mountId);
     if (!mount) {
         return;
     }
 
     try {
-        const response = await fetch("_header.html");
+        const response = await fetch(partialPath);
         if (!response.ok) {
             return;
         }
@@ -74,7 +74,11 @@ const loadSharedHeader = async () => {
 };
 
 document.addEventListener("DOMContentLoaded", async () => {
-    await loadSharedHeader();
+    await Promise.all([
+        loadPartial("site-header", "_header.html"),
+        loadPartial("site-footer", "_footer.html")
+    ]);
+
     setActiveNav();
     initMobileMenu();
 });

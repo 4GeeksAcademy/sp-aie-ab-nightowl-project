@@ -9,19 +9,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="styles.css">
 	<script src="https://cdn.tailwindcss.com"></script>
-	<script>
-		tailwind.config = {
-			theme: {
-				extend: {
-					colors: {
-						ember: "#ea580c",
-						ink: "#0f172a",
-						sand: "#fff7ed"
-					}
-				}
-			}
-		};
-	</script>
+	<script src="tailwind-config.js"></script>
 </head>
 <body data-page="application">
 	<div id="site-header"></div>
@@ -41,6 +29,8 @@
 		</section>
 	</main>
 
-	<script src="animations.js" defer></script>
+	<div id="site-footer"></div>
+
+	<script src="application.js" defer></script>
 </body>
 </html>
