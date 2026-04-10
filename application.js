@@ -33,6 +33,7 @@ const initMobileMenu = () => {
             "pt-4"
         );
         menuToggle.setAttribute("aria-expanded", "false");
+        mobileMenu.setAttribute("aria-hidden", "true");
     };
 
     const openMenu = () => {
@@ -46,6 +47,7 @@ const initMobileMenu = () => {
             "pt-4"
         );
         menuToggle.setAttribute("aria-expanded", "true");
+        mobileMenu.setAttribute("aria-hidden", "false");
     };
 
     menuToggle.addEventListener("click", () => {
