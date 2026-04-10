@@ -24,13 +24,27 @@ const initMobileMenu = () => {
 
     const closeMenu = () => {
         mobileMenu.classList.add("max-h-0", "opacity-0");
-        mobileMenu.classList.remove("max-h-64", "opacity-100");
+        mobileMenu.classList.remove(
+            "max-h-64",
+            "opacity-100",
+            "mt-4",
+            "border-t",
+            "border-slate-200",
+            "pt-4"
+        );
         menuToggle.setAttribute("aria-expanded", "false");
     };
 
     const openMenu = () => {
         mobileMenu.classList.remove("max-h-0", "opacity-0");
-        mobileMenu.classList.add("max-h-64", "opacity-100");
+        mobileMenu.classList.add(
+            "max-h-64",
+            "opacity-100",
+            "mt-4",
+            "border-t",
+            "border-slate-200",
+            "pt-4"
+        );
         menuToggle.setAttribute("aria-expanded", "true");
     };
 
