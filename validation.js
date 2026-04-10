@@ -253,6 +253,21 @@ const initApplicationValidation = () => {
 		});
 		setGroupError("skills-error", "");
 	});
+
+	form.addEventListener("reset", () => {
+		// Wait for native reset to finish before clearing validation state.
+		requestAnimationFrame(() => {
+			clearGlobalFeedback(globalFeedback);
+			successMessage.textContent = "";
+			successMessage.classList.add("hidden");
+
+			trackedInputs.forEach((input) => {
+				setFieldError(input, "");
+			});
+
+			setGroupError("skills-error", "");
+		});
+	});
 };
 
 document.addEventListener("DOMContentLoaded", initApplicationValidation);
