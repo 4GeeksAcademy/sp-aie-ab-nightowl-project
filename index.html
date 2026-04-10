@@ -3,15 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nightowl - Landing</title>
+    <title>Brasaland Digital - Landing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ember: "#ea580c",
+                        ink: "#0f172a",
+                        sand: "#fff7ed"
+                    }
+                }
+            }
+        };
+    </script>
 </head>
 <body>
     <header class="border-b border-slate-200 bg-white">
         <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
             <a href="index.html" class="flex items-center gap-2">
-                <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-slate-900 text-sm font-bold text-white">N</span>
-                <span class="text-lg font-semibold tracking-tight text-slate-900">Nightowl Labs</span>
+                <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-ink text-sm font-bold text-white">B</span>
+                <span class="text-lg font-semibold tracking-tight text-slate-900">Brasaland Digital</span>
             </a>
 
             <ul class="flex items-center gap-6 text-sm font-medium text-slate-700">
@@ -22,9 +39,49 @@
         </nav>
     </header>
 
-    <main class="mx-auto max-w-6xl px-6 py-12">
-        <h1 class="text-3xl font-bold text-slate-900">Landing Page</h1>
-        <p class="mt-3 text-slate-600">Header implemented with company logo/name and navigation.</p>
+    <main class="mx-auto max-w-6xl px-6 pb-16 pt-10">
+        <section class="relative overflow-hidden rounded-3xl border border-orange-100 bg-white/85 px-8 py-12 shadow-[0_22px_70px_-32px_rgba(15,23,42,0.4)] sm:px-10 sm:py-14 lg:px-14">
+            <div class="absolute -left-16 top-16 h-44 w-44 rounded-full bg-ember/15 blur-2xl"></div>
+            <div class="absolute -right-16 -top-14 h-56 w-56 rounded-full bg-ink/10 blur-3xl"></div>
+
+            <div class="relative grid items-center gap-10 lg:grid-cols-[1.25fr_0.75fr]">
+                <div>
+                    <p class="mb-5 inline-flex rounded-full border border-orange-200 bg-sand px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-orange-700">
+                        14 Restaurants | 2 Countries | 1 Digital Core
+                    </p>
+                    <h1 class="brand-font text-4xl font-bold leading-tight text-ink sm:text-5xl lg:text-6xl">
+                        From local grill house to intelligent restaurant chain, without losing the flavor.
+                    </h1>
+                    <p class="mt-6 max-w-2xl text-lg leading-relaxed text-slate-700">
+                        Brasaland connects operations, sales, and customer experience across 14 restaurants in Colombia and Florida. Our value proposition is simple: consistent quality, real-time decisions, and scalable growth powered by data.
+                    </p>
+                    <div class="mt-8 flex flex-wrap items-center gap-3">
+                        <a href="application.html" class="rounded-xl bg-ember px-6 py-3 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-orange-700">
+                            Join Brasaland Digital
+                        </a>
+                        <a href="#contact" class="rounded-xl border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-800 hover:border-slate-500">
+                            Talk With The Team
+                        </a>
+                    </div>
+                </div>
+
+                <aside class="flex min-h-[430px] flex-col rounded-2xl bg-ink p-6 text-white shadow-xl">
+                    <p class="text-xs font-semibold uppercase tracking-[0.2em] text-orange-300">Value Snapshot</p>
+                    <p class="mt-3 text-sm text-slate-300">A quick view of the outcomes Brasaland Digital is designed to deliver.</p>
+                    <ul class="mt-4 space-y-3 text-sm leading-relaxed text-slate-200">
+                        <li>Live operational visibility for every location.</li>
+                        <li>Unified standards from Medellin to Miami.</li>
+                        <li>Smarter purchasing and lower stock risk.</li>
+                        <li>Faster leadership decisions with shared data.</li>
+                    </ul>
+
+                    <div class="mt-auto rounded-xl bg-white/10 p-4">
+                        <p class="text-xs uppercase tracking-[0.16em] text-orange-200">Annual Revenue</p>
+                        <p class="mt-1 text-2xl font-bold text-white">$6M+</p>
+                    </div>
+                </aside>
+            </div>
+        </section>
     </main>
 </body>
 </html>
