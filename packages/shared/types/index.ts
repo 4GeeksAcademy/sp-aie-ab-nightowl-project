@@ -11,6 +11,12 @@ export type CountryCode = "CO" | "US";
 
 export type CurrencyCode = "COP" | "USD";
 
+export type MenuCategory = string;
+
+export type PaymentMethod = string;
+
+export type WasteReason = string;
+
 export interface PriceByCurrency {
   USD: number;
   COP: number;
@@ -25,8 +31,9 @@ export interface BaseEntity {
 export interface MenuItem extends BaseEntity {
   name: string;
   description: string;
-  category: string;
+  category: MenuCategory;
   prices: PriceByCurrency;
+  ingredientCost?: PriceByCurrency;
   prepTimeMinutes: number;
   availableInCountries: CountryCode[];
   isActive: boolean;
@@ -37,6 +44,7 @@ export interface SaleTransaction extends BaseEntity {
   menuItemId: Id;
   quantity: number;
   unitPrice: PriceByCurrency;
+  paymentMethod?: PaymentMethod;
   waiterName: string;
   soldAt: ISODateString;
   country: CountryCode;
@@ -65,9 +73,16 @@ export interface WasteRecord extends BaseEntity {
   quantity: number;
   unit: string;
   estimatedCost: PriceByCurrency;
-  reason: string;
+  reason: WasteReason;
   recordedAt: ISODateString;
   country: CountryCode;
+}
+
+export interface CountryMetrics {
+  totalLocations: number;
+  totalRevenue: PriceByCurrency;
+  averageRevenuePerLocation: PriceByCurrency;
+  totalSales: number;
 }
 
 export interface SalesTotals {
@@ -78,16 +93,6 @@ export interface SalesTotals {
 export interface WasteTotals {
   quantity: number;
   estimatedCost: PriceByCurrency;
-}
-
-export interface ValidationError {
-  field: string;
-  message: string;
-}
-
-export interface ValidationResult {
-  isValid: boolean;
-  errors: ValidationError[];
 }
 
 export const ZERO_TOTALS: SalesTotals = {
