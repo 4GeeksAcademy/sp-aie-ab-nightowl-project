@@ -80,6 +80,16 @@ export interface WasteTotals {
   estimatedCost: PriceByCurrency;
 }
 
+export interface ValidationError {
+  field: string;
+  message: string;
+}
+
+export interface ValidationResult {
+  isValid: boolean;
+  errors: ValidationError[];
+}
+
 export const ZERO_TOTALS: SalesTotals = {
   USD: 0,
   COP: 0,
